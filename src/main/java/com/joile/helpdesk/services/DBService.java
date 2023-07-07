@@ -32,8 +32,7 @@ public class DBService {
 		Cliente cli1 = new Cliente(null, "Jose silva", "12032295534", "jose@email.com", "cliente123");
 		cli1.addPerfil(Perfil.CLIENTE);
 
-		Chamado cha1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 01", "primeiro chamado", tec1,
-				cli1);
+		Chamado cha1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 01", "primeiro chamado", tec1, cli1);
 
 		tecnicoRepository.saveAll(Arrays.asList(tec1));
 		clienteRepository.saveAll(Arrays.asList(cli1));
