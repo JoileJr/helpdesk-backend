@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.joile.helpdesk.domain.Tecnico;
+import com.joile.helpdesk.exceptions.ObjectnotFoundException;
 import com.joile.helpdesk.repositories.TecnicoRepository;
 
 @Service
@@ -16,7 +17,7 @@ public class TecnicoService {
 
     public Tecnico findById(Integer id) {
 		Optional<Tecnico> obj = repository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow( () -> new ObjectnotFoundException("Obejto não encontrado, ID: "+1d) );
 	}
 
 }
